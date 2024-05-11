@@ -1,0 +1,105 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Tables {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6"style="background-image: url(/static/assets/img/background.png); background-size: cover; background-position: center top;">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Devices</h6>
+            
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Device Page</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th class="sort" data-sort="device">Device</th>
+                  <th scope="col justify-content-end" data-sort="monitor_name">Monitor Name</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody class="list text-dark">
+                {% for device in device%}
+                <tr>
+                    <th>
+                        {{ device.name }}
+                    </th>
+                    <td>{{ device.monitor.name }}</td>
+                    <td class="text-right">
+                        <button class="like-btn btn btn-sm btn-success" data-device-id="{{ device.id }}">
+                            Activate
+                        </button>
+                        <div class="dropdown">
+                            <a class="like-btn btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a href="edit/{{ device.id }}" class="dropdown-item">Edit</a>
+                                <a href="delete/{{ device.id }}" class="dropdown-item">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor%}
+              </tbody>
+            </table>
+          </div>
+          <!-- Card footer -->
+          <div>
+            <a href="" class="btn btn-primary1 fixed-btn" style="font-size:25px;"><i class='bx bx-refresh' ></i> Scan</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% include "includes/footer.html" %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var table = document.querySelector(".table");
+            
+            table.addEventListener("click", function(event) {
+                var target = event.target;
+    
+                // Check if the clicked element is a "like" button
+                if (target.classList.contains("like-btn")) {
+                    var deviceId = target.getAttribute("data-device-id");
+                    var successIcon = target.closest("td").querySelector(".success-icon");
+    
+                    // Position the success icon at the center of the button
+                    successIcon.style.display = "block";
+                    successIcon.style.left = target.offsetLeft + (target.offsetWidth / 2) - (successIcon.offsetWidth / 2) + "px";
+                    successIcon.style.top = target.offsetTop + (target.offsetHeight / 2) - (successIcon.offsetHeight / 2) + "px";
+    
+                    // Hide the success icon after a short delay (e.g., 2 seconds)
+                    setTimeout(function() {
+                        successIcon.style.display = "none";
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+  </div>
+  
+{% endblock content %}
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

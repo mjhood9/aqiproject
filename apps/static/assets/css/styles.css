@@ -1,0 +1,54 @@
+.btn-primary1 {
+    color: #fff;
+    background-color: #37c9ee;
+    border-color: #36d7ff;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
+    .btn-primary1:hover {
+      color: #fff;
+      background-color: #37c9ee;
+      border-color: #36d7ff; }
+    .btn-primary1:focus, .btn-primary1.focus {
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(94, 114, 228, 0.5); }
+    .btn-primary1.disabled, .btn-primary1:disabled {
+      color: #fff;
+      background-color: #37c9ee;
+      border-color: #36d7ff; }
+    .btn-primary1:not(:disabled):not(.disabled):active, .btn-primary1:not(:disabled):not(.disabled).active,
+    .show > .btn-primary1.dropdown-toggle {
+      color: #fff;
+      background-color: #37c9ee;
+      border-color: #36d7ff; }
+      .btn-primary1:not(:disabled):not(.disabled):active:focus, .btn-primary1:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-primary1.dropdown-toggle:focus {
+        box-shadow: none, 0 0 0 0 rgba(4, 190, 236, 0.5); }
+.bg-default {
+    background-color: #172b4d !important; }
+    
+    a.bg-default:hover, a.bg-default:focus,
+    button.bg-default:hover,
+    button.bg-default:focus {
+    background-color: #0b1526 !important; }
+.backgroundimg{
+    background-image: url('/apps/static/assets/img/background.png');
+  background-size: cover;
+  background-position: center;
+}
+.bg-gradient-cyan {
+    background: linear-gradient(90deg, rgba(15,93,224,1) 7%, rgba(0,212,255,1) 100%) !important; }
+.bg-gradient-grey {
+        background: linear-gradient(90deg, rgba(109,111,115,1) 76%, rgba(255,255,255,1) 100%) !important; }
+.fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+    }
+.bg-gradient-dark_blue{
+  background: radial-gradient(circle, rgba(0,26,255,1) 28%, rgba(0,46,227,1) 60%);
+}
+.success-icon {
+  display: none;
+  color: green;
+  position: absolute;
+  pointer-events: none; /* Prevents the success icon from being clickable */
+}

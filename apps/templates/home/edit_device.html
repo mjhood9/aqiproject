@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Add Monitor {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6" style="min-height: 200px; background-image: url(/static/assets/img/background.png); background-size: cover; background-position: center top;">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Devices</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h3 class="mb-0">Update Device </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <form method="post" action="{% url 'editdevice' device.id %}" >
+                  {% csrf_token %}
+                  <div class="pl-lg-4">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="form-control-label" for="device_name">Device Name:</label>
+                          <input type="text" id="device_name" name="device_name" class="form-control" value="{{device.name}}" required>
+                          </div>
+                      </div>
+                    </div>
+                      <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                  </div>
+                  <hr class="my-4" />
+                </form>
+              </div>
+            </div>
+          </div>
+    </div>
+    {% include "includes/footer.html" %}
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+      <a class="navbar-brand" href="/">
+        <p class="text-blue font-weight-bold">Indoor Air Quality</p>
+      </a>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="{% url 'home' %}">
+              <i class="ni ni-tv-2 text-primary"></i>
+              <span class="nav-link-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'history' in segment %} active {% endif %}" href="{% url 'history' %}">
+              <i class="fa fa-history text-green"></i>
+              <span class="nav-link-text">History</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'monitor' in segment %} active {% endif %}" href="{% url 'monitors' %}">
+              <i class="far fa-hdd text-red"></i>
+              <span class="nav-link-text">Monitors</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'devices' in segment %} active {% endif %}" href="{% url 'devices' %}">
+              <i class='bx bx-devices text-yellow' style="font-size:20px;"></i>
+              <span class="nav-link-text">Device</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'showfeedback' in segment %} active {% endif %}" href="{% url 'showfeedback' %}">
+              <i class='bx bx-message-dots text-cyan' style="font-size:20px;"></i>
+              <span class="nav-link-text">Feedback</span>
+            </a>
+          </li>
+          
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">
+              <i class="ni ni-user-run text-red"></i>
+              <span class="nav-link-text">Logout</span>
+            </a>
+          </li>            
+        </ul>
+        <!-- Divider -->
+        <hr class="my-3">
+        <!-- Heading -->
+        
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,205 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{%load static  %}
+
+    <!-- Header -->
+    <div class="header bg-primary backgroundimg pb-6" style="min-height: 500px; background-image: url(/static/assets/img/background.png); background-size: cover; background-position: center top;">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
+            </div>
+            <div class="col-lg-6 col-5 text-right">
+              <!-- views.py about select monitor to show air quality and feedback -->
+               
+            
+            </div>
+          </div>
+         
+          <!-- Card stats -->
+          
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+              
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <!-- air quality aqi selected monitor -->
+                      <h5 class="card-title text-uppercase text-muted mb-0">Air Quality</h5>
+                      <span class="h2 font-weight-bold mb-0"> 40 AQI</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-cyan text-white rounded-circle shadow">
+                        <i class="fas fa-wind"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <!-- co2 selected monitor -->
+                      <h5 class="card-title text-uppercase text-muted mb-0">CO2</h5>
+                      <span class="h2 font-weight-bold mb-0">100 ppm</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-grey text-white rounded-circle shadow">
+                        <i class="fas fa-cloud"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <!-- voc selected monitor -->
+                      <h5 class="card-title text-uppercase text-muted mb-0">VOC</h5>
+                      <span class="h2 font-weight-bold mb-0">200 ppb</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                        <i class="fas fa-flask"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <!-- temperature selected monitor -->
+                      <h5 class="card-title text-uppercase text-muted mb-0">Temperature</h5>
+                      <span class="h2 font-weight-bold mb-0">25°</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                        <i class="fas fa-thermometer-half"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body bg-white rounded ">
+                <div class="row">
+                  <div class="col">
+                    <!-- humidity selected monitor -->
+                    <h5 class="card-title text-uppercase text-muted mb-0">Humidity</h5>
+                    <span class="h2 font-weight-bold mb-0">40%</span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-gradient-cyan text-white rounded-circle shadow">
+                      <i class="fas fa-tint"></i>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="card bg-default bg-gradient-dark_blue">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-light text-uppercase ls-1 mb-1">Recommendation</h6>
+                  <h5 class="h3 text-white mb-0">Weekly Air Quality</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="col-xl-8 col-lg-6 col-md-7 col-sm-8">
+                <div class="card-bx stacked">
+                    <div class="card-info text-white">
+                        <p class="h2 text-white mb-1">AIR QUALITY:</p>
+                        <h2 class="fs-36 text-white mb-sm-4 mb-3">63,32%</h2>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+{% comment %}                 <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                  <h5 class="h3 mb-0"></h5>
+                  
+                </div> {% endcomment %}
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex">
+                <label for="good" class="h2 text-black mb-0">Good</label>
+                <img src="{% static 'assets/img/icons/good.png' %}" class="img-fluid"></div>
+              <div class="h3 text-black mb-1">
+                The air quality is good today, which means it poses little to no risk to your health. Enjoy your outdoor activities!
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+      <!-- view about showaddmonitor to send to addmonitor.html -->
+      <div>
+      <a href="{% url 'showaddmonitor' %}" class="btn btn-primary1 fixed-btn" style="font-size:25px;">+</a>
+      </div>
+      <div>
+      {% include "includes/footer.html" %}
+      </div>
+    </div>
+    
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="/static/assets/js/chart.js"></script>
+
+{% endblock javascripts %}

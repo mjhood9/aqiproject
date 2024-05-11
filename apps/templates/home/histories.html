@@ -1,0 +1,93 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Tables {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6"style="background-image: url(/static/assets/img/background.png); background-size: cover; background-position: center top;">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">History</h6>
+            
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">History Page</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="aqi">AQI</th>
+                  <th scope="col" class="sort" data-sort="co2">CO2</th>
+                  <th scope="col" class="sort" data-sort="voc">VOC</th>
+                  <th scope="col" class="sort" data-sort="temperature">Temperature</th>
+                  <th scope="col" class="sort" data-sort="humidity">Humidity</th>
+                  <th scope="col" class="sort" data-sort="date">DateTime</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="list text-dark">
+                {% for air_quality in airquality%}
+                <tr>
+                  <th>
+                    {{ air_quality.air_quality_aqi}}
+                  </th>
+                  <td>
+                    {{ air_quality.co2}}
+                  </td>
+                  <td>
+                    {{ air_quality.voc}}
+                    
+                  </td>
+                  <td>
+                    {{ air_quality.temperature}}
+                  </td>
+                  <td>
+                    {{ air_quality.humidity}}
+                  </td>
+                  <td>{{ air_quality.datetime}}</td>
+                  <td class="text-right">
+                    <div class="dropdown">
+                      <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a href="delete/{{air_quality.id}}" class="dropdown-item" >Delete</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor%}
+              </tbody>
+            </table>
+          </div>
+          <!-- Card footer -->
+          
+        </div>
+      </div>
+    </div>
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}
